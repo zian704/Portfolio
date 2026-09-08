@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Muhamad Zian Pahrurijal | Web Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #08090b;
+            color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 8%;
+
+            background: rgba(8, 9, 11, 0.85);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid #222;
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #b8ff5a;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #aaa;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #b8ff5a;
+        }
+
+        .menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 60px;
+
+            max-width: 1150px;
+            margin: auto;
+
+            padding: 120px 30px 70px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .small-title {
+            color: #b8ff5a;
+            font-size: 13px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1;
+            letter-spacing: -4px;
+        }
+
+        .hero h1 span {
+            color: #b8ff5a;
+        }
+
+        .hero p {
+            margin-top: 25px;
+            color: #999;
+            max-width: 570px;
+            font-size: 17px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 13px 22px;
+            border: 1px solid #333;
+            transition: 0.3s;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: #b8ff5a;
+            color: #08090b;
+            border-color: #b8ff5a;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary:hover {
+            border-color: #b8ff5a;
+            color: #b8ff5a;
+        }
+
+        /* ================= CODE CARD ================= */
+
+        .code-card {
+            width: 400px;
+
+            background: #101214;
+            border: 1px solid #292d30;
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            box-shadow: 0 25px 80px rgba(0,0,0,.5);
+
+            transform: rotate(2deg);
+        }
+
+        .code-top {
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 15px;
+
+            border-bottom: 1px solid #292d30;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+
+            background: #444;
+
+            border-radius: 50%;
+
+            margin-right: 6px;
+        }
+
+        .file-name {
+            margin-left: auto;
+            margin-right: auto;
+
+            color: #777;
+            font-size: 12px;
+        }
+
+        pre {
+            padding: 25px;
+
+            font-family: monospace;
+            font-size: 13px;
+
+            color: #aaa;
+
+            overflow-x: auto;
+        }
+
+        .green {
+            color: #b8ff5a;
+        }
+
+        .orange {
+            color: #ff9b70;
+        }
+
+        /* ================= GENERAL SECTION ================= */
+
+        section {
+            max-width: 1150px;
+            margin: auto;
+
+            padding: 110px 30px;
+
+            border-top: 1px solid #1c1e20;
+        }
+
+        .section-number {
+            color: #555;
+            font-family: monospace;
+            font-size: 12px;
+
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 1.05;
+
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #b8ff5a;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .about h2 {
+            font-size: 45px;
+            line-height: 1.1;
+        }
+
+        .about h2 span {
+            color: #b8ff5a;
+        }
+
+        .about-text {
+            color: #999;
+            font-size: 16px;
+        }
+
+        .about-text p + p {
+            margin-top: 20px;
+        }
+
+        .about-text strong {
+            color: white;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .skill {
+            background: #101214;
+
+            border: 1px solid #25282b;
+
+            padding: 30px;
+
+            transition: .3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-7px);
+            border-color: #4b5740;
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+
+            display: grid;
+            place-items: center;
+
+            border: 1px solid #333;
+
+            color: #b8ff5a;
+
+            font-family: monospace;
+
+            margin-bottom: 25px;
+        }
+
+        .skill h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .bar {
+            height: 4px;
+            background: #292d30;
+
+            margin-top: 25px;
+        }
+
+        .bar div {
+            height: 100%;
+            background: #b8ff5a;
+        }
+
+        /* ================= PROJECT ================= */
+
+        .projects {
+            display: grid;
+            gap: 15px;
+        }
+
+        .project {
+            display: grid;
+            grid-template-columns: 70px 1fr 250px;
+
+            min-height: 240px;
+
+            background: #101214;
+
+            border: 1px solid #25282b;
+
+            transition: .3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            border-color: #4b5740;
+        }
+
+        .project-number {
+            padding: 25px;
+
+            color: #555;
+
+            font-family: monospace;
+        }
+
+        .project-info {
+            padding: 25px 10px 25px 0;
+        }
+
+        .project-type {
+            color: #b8ff5a;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+        }
+
+        .project h3 {
+            font-size: 30px;
+            margin: 10px 0;
+        }
+
+        .project-info p {
+            color: #999;
+            font-size: 14px;
+            max-width: 600px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+
+            margin-top: 20px;
+        }
+
+        .tags span {
+            border: 1px solid #333;
+
+            padding: 5px 9px;
+
+            color: #888;
+
+            font-family: monospace;
+            font-size: 10px;
+        }
+
+        .project-image {
+            display: grid;
+            place-items: center;
+
+            background:
+                linear-gradient(#1c211d 1px, transparent 1px),
+                linear-gradient(90deg, #1c211d 1px, transparent 1px);
+
+            background-size: 22px 22px;
+
+            border-left: 1px solid #25282b;
+        }
+
+        .worm {
+            color: #b8ff5a;
+            font-size: 20px;
+            font-family: monospace;
+
+            text-shadow: 0 0 20px rgba(184,255,90,.3);
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-box {
+            background: #101214;
+
+            border: 1px solid #25282b;
+
+            padding: 70px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-box h2 {
+            font-size: clamp(40px, 6vw, 65px);
+            line-height: 1;
+        }
+
+        .contact-box h2 span {
+            color: #b8ff5a;
+        }
+
+        .contact-box p {
+            color: #888;
+
+            max-width: 550px;
+
+            margin-top: 20px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 10px;
+
+            margin-top: 30px;
+        }
+
+        .contact-links a {
+            padding: 11px 17px;
+
+            border: 1px solid #333;
+
+            font-family: monospace;
+            font-size: 12px;
+        }
+
+        .contact-links a:hover {
+            color: #b8ff5a;
+            border-color: #b8ff5a;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 30px;
+
+            border-top: 1px solid #1c1e20;
+
+            display: flex;
+            justify-content: space-between;
+
+            color: #666;
+
+            font-size: 12px;
+        }
+
+        footer strong {
+            color: #b8ff5a;
+        }
+
+        /* ================= ANIMATION ================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+
+            transition: .8s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 0 25px;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+
+                top: 70px;
+                left: 0;
+
+                width: 100%;
+
+                display: none;
+                flex-direction: column;
+
+                background: #0b0d0e;
+
+                border-bottom: 1px solid #222;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 15px 25px;
+                border-top: 1px solid #222;
+            }
+
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .code-card {
+                width: 100%;
+                transform: none;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                grid-template-columns: 45px 1fr;
+            }
+
+            .project-image {
+                display: none;
+            }
+
+            .contact-box {
+                padding: 35px 25px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <a href="#home" class="logo">MZ.</a>
+
+        <button class="menu" id="menu">
+            ☰
+        </button>
+
+        <nav id="nav">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <div class="hero" id="home">
+
+            <div class="hero-text reveal">
+
+                <div class="small-title">
+                    WEB DEVELOPER • STUDENT
+                </div>
+
+                <h1>
+                    Muhamad Zian
+                    <span>Pahrurijal.</span>
+                </h1>
+
+                <p>
+                    Saya seorang pelajar kelas 11.3 SMAN 1 Rumpin
+                    yang sedang belajar membangun website menggunakan
+                    HTML, CSS, dan JavaScript.
+                </p>
+
+                <div class="buttons">
+
+                    <a href="#projects" class="btn btn-primary">
+                        Lihat Project
+                    </a>
+
+                    <a href="#contact" class="btn btn-secondary">
+                        Hubungi Saya
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="code-card reveal">
+
+                <div class="code-top">
+
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+
+                    <div class="file-name">
+                        zian.js
+                    </div>
+
+                </div>
+
+<pre><span class="orange">const</span> developer = {
+
+  name:
+  <span class="green">"Muhamad Zian"</span>,
+
+  role:
+  <span class="green">"Web Developer"</span>,
+
+  school:
+  <span class="green">"SMAN 1 Rumpin"</span>,
+
+  class:
+  <span class="green">"11.3"</span>,
+
+  learning: [
+    <span class="green">"HTML"</span>,
+    <span class="green">"CSS"</span>,
+    <span class="green">"JavaScript"</span>
+  ]
+
+};</pre>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about">
+
+            <div class="section-number">
+                01 — ABOUT ME
+            </div>
+
+            <div class="about">
+
+                <div>
+                    <h2>
+                        Masih belajar,
+                        <span>terus berkembang.</span>
+                    </h2>
+                </div>
+
+                <div class="about-text">
+
+                    <p>
+                        Halo! Saya
+                        <strong>Muhamad Zian Pahrurijal</strong>.
+                        Saya adalah pelajar kelas 11.3 di
+                        <strong>SMAN 1 Rumpin</strong>.
+                    </p>
+
+                    <p>
+                        Saya tertarik dengan dunia web development
+                        dan saat ini sedang belajar HTML, CSS,
+                        dan JavaScript.
+                    </p>
+
+                    <p>
+                        Saya suka membuat project kecil untuk
+                        mengasah kemampuan coding dan mencoba
+                        hal-hal baru dalam dunia website.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SKILLS ================= -->
+
+        <section id="skills">
+
+            <div class="section-number">
+                02 — SKILLS
+            </div>
+
+            <h2 class="section-title">
+                My <span>Skills.</span>
+            </h2>
+
+            <div class="skills">
+
+                <div class="skill reveal">
+
+                    <div class="skill-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>HTML</h3>
+
+                    <p>
+                        Membangun struktur halaman website
+                        menggunakan HTML.
+                    </p>
+
+                    <div class="bar">
+                        <div style="width: 75%;"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill reveal">
+
+                    <div class="skill-icon">
+                        #
+                    </div>
+
+                    <h3>CSS</h3>
+
+                    <p>
+                        Membuat tampilan website,
+                        layout, responsive design,
+                        dan animasi.
+                    </p>
+
+                    <div class="bar">
+                        <div style="width: 65%;"></div>
+                    </div>
+
+                </div>
+
+
+                <div class="skill reveal">
+
+                    <div class="skill-icon">
+                        JS
+                    </div>
+
+                    <h3>JavaScript</h3>
+
+                    <p>
+                        Sedang mempelajari JavaScript
+                        untuk membuat website interaktif.
+                    </p>
+
+                    <div class="bar">
+                        <div style="width: 50%;"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROJECTS ================= -->
+
+        <section id="projects">
+
+            <div class="section-number">
+                03 — PROJECTS
+            </div>
+
+            <h2 class="section-title">
+                My <span>Projects.</span>
+            </h2>
+
+
+            <div class="projects">
+
+
+                <!-- PROJECT 1 -->
+
+                <div class="project reveal">
+
+                    <div class="project-number">
+                        01
+                    </div>
+
+                    <div class="project-info">
+
+                        <div class="project-type">
+                            GAME • JAVASCRIPT
+                        </div>
+
+                        <h3>
+                            Pixel Worm
+                        </h3>
+
+                        <p>
+                            Game cacing bergaya pixel yang dibuat
+                            menggunakan HTML, CSS, dan JavaScript.
+                            Game memiliki sistem skor, level,
+                            collision, makanan, pause,
+                            restart, dan kontrol untuk HP.
+                        </p>
+
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-image">
+
+                        <div class="worm">
+                            ●━━●━━●
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROJECT 2 -->
+
+                <div class="project reveal">
+
+                    <div class="project-number">
+                        02
+                    </div>
+
+                    <div class="project-info">
+
+                        <div class="project-type">
+                            WEBSITE • HTML & CSS
+                        </div>
+
+                        <h3>
+                            Web Experiment
+                        </h3>
+
+                        <p>
+                            Project latihan untuk mencoba berbagai
+                            layout, desain, dan responsive website
+                            menggunakan HTML dan CSS.
+                        </p>
+
+                        <div class="tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-image"></div>
+
+                </div>
+
+
+                <!-- PROJECT 3 -->
+
+                <div class="project reveal">
+
+                    <div class="project-number">
+                        03
+                    </div>
+
+                    <div class="project-info">
+
+                        <div class="project-type">
+                            COMING SOON
+                        </div>
+
+                        <h3>
+                            Next Project
+                        </h3>
+
+                        <p>
+                            Project berikutnya sedang dalam proses
+                            belajar dan pengembangan.
+                        </p>
+
+                        <div class="tags">
+                            <span>Learning</span>
+                            <span>Building</span>
+                        </div>
+
+                    </div>
+
+                    <div class="project-image">
+
+                        <div class="worm">
+                            &lt;future /&gt;
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section id="contact">
+
+            <div class="contact-box reveal">
+
+                <div class="small-title">
+                    04 — CONTACT
+                </div>
+
+                <h2>
+                    Let's build
+                    <span>something.</span>
+                </h2>
+
+                <p>
+                    Saya masih dalam proses belajar web development.
+                    Kalau ingin ngobrol, berkolaborasi, atau melihat
+                    project saya, silakan hubungi saya.
+                </p>
+
+                <div class="contact-links">
+
+                    <!-- GANTI EMAIL INI -->
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ggzian091@gmail.com"
+   target="_blank">
+    ✉ Gmail
+</a>
+                    </a>
+
+                    <!-- GANTI LINK GITHUB INI -->
+                    <a href="https://github.com/" target="_blank">
+                        ◉ GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <strong>
+            MZ.
+        </strong>
+
+        <span>
+            © 2026 Muhamad Zian Pahrurijal
+        </span>
+
+        <span>
+            Built while learning.
+        </span>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // MENU HP
+
+        const menu = document.getElementById("menu");
+        const nav = document.getElementById("nav");
+
+        menu.addEventListener("click", function () {
+
+            nav.classList.toggle("active");
+
+            if (nav.classList.contains("active")) {
+                menu.textContent = "✕";
+            } else {
+                menu.textContent = "☰";
+            }
+
+        });
+
+
+        // TUTUP MENU SETELAH KLIK LINK
+
+        document.querySelectorAll("nav a").forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                nav.classList.remove("active");
+
+                menu.textContent = "☰";
+
+            });
+
+        });
+
+
+        // ANIMASI SAAT SCROLL
+
+        const observer = new IntersectionObserver(
+
+            function(entries) {
+
+                entries.forEach(function(entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.15
+            }
+
+        );
+
+
+        document.querySelectorAll(".reveal").forEach(function(element) {
+
+            observer.observe(element);
+
+        });
+
+    </script>
+
+</body>
+</html>
